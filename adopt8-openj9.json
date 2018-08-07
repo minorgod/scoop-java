@@ -5,7 +5,7 @@
     "architecture": {
         "64bit": {
             "url": "https://ci.adoptopenjdk.net/job/openjdk8_openj9_build_x86-64_windows/141/artifact/OpenJDK8_x64_Windows_201807080700.zip",
-            "hash": "e3dc48b5cf6c8f01287d0c375a40b02692a3dd016e05368b2f59c90aa65df704"
+            "hash": "md5:2de3ad36fe698604a8aff69b6a151393"
         }
     },
     "extract_dir": "jdk8u181-b13",
