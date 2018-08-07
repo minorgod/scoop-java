@@ -19,8 +19,8 @@
         "JAVA_HOME": "$dir"
     },
     "checkver": {
-        "re": "//cdn.azul.com/zulu/bin/(?<name>zulu10(?<major>[\\d.]+)\\+(?<build>[\\d]+)-jdk(?<openver>[\\d.]+)-win)_x64.zip",
-        "replace": "10${major}-${build}"
+        "re": "//cdn.azul.com/zulu/bin/(?<name>zulu(?<major>[\\d.]+)\\+(?<build>[\\d]+)-jdk(?<openver>[\\d.]+)-win)_x64.zip",
+        "replace": "${major}-${build}"
     },
     "autoupdate": {
         "architecture": {
