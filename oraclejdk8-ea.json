@@ -48,8 +48,7 @@
             "32bit": {
                 "url": "https://download.java.net/java/jdk$matchVersion/archive/$matchBuild/binaries/jdk-$matchVersion-ea-bin-$matchBuild-windows-i586-$matchDate.exe#/dl.7z"
             }
-        },
-        "extract_dir": "jdk1.8.0_$matchUpdate"
+        }
     },
     "notes": "This is an Early-access (EA) release."
 }
