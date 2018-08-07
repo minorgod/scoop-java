@@ -1,11 +1,11 @@
 {
     "homepage": "https://adoptopenjdk.net",
-    "version": "9-181-201808061426",
-    "license": "http://openjdk.java.net/legal/gplv2+ce.html",
+    "version": "9.0.4-11_249",
+    "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk9-nightly/releases/download/jdk-9+181-201808061426/OpenJDK9_x64_Windows_201808061426.zip",
-            "hash": "54d6a353362b45869a2a4744aa2d8d303651818528535ae939f722771307d25d"
+            "url": "https://ci.adoptopenjdk.net/job/openjdk9_build_x86-64_windows/249/artifact/OpenJDK9_x64_Windows_201808061426.zip",
+            "hash": "md5:e53a989c97c2833ee07be2831a665aae"
         }
     },
     "extract_dir": "jdk-9.0.4+11",
@@ -14,19 +14,20 @@
         "JAVA_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://github.com/AdoptOpenJDK/openjdk9-nightly/releases",
-        "re": "(?<fullname>jdk-(?<major>[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+)-(?<bdate>[\\d]{12}))/OpenJDK9_x64_Windows_",
-        "replace": "${major}-${build}-${bdate}"
+        "url": "https://ci.adoptopenjdk.net/job/openjdk9_build_x86-64_windows/lastSuccessfulBuild/consoleFull",
+        "re": "(?sm)<title>openjdk(?<jdk>[\\d]+)(?<jvm>_openj9)?_build_x86-64_windows #(?<jbuild>[\\d]+)(?:.*?)OpenJDK repo tag is (?<fullname>jdk-(?<major>[\\d.]+)(?:\\%2B|\\+)(?<build>[\\d]+))(?:.*?)Moving the artifacts to /(?:.*?)/(?<filename>OpenJDK[\\d]+_x64_Windows_(?<bdate>[\\d]{12})).zip",
+        "replace": "${major}-${build}_${jbuild}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/AdoptOpenJDK/openjdk9-nightly/releases/download/jdk-$matchMajor+$matchBuild-$matchBdate/OpenJDK9_x64_Windows_$matchBdate.zip",
+                "url": "https://ci.adoptopenjdk.net/job/openjdk$matchJdk$matchJvm_build_x86-64_windows/$matchJbuild/artifact/$matchFilename.zip",
                 "hash": {
-                    "url": "https://github.com/AdoptOpenJDK/openjdk9-nightly/releases/download/jdk-$matchMajor+$matchBuild-$matchBdate/OpenJDK9_x64_Windows_$matchBdate.sha256.txt",
-                    "find": "^([a-fA-F0-9]{64})"
+                    "url": "$url/*fingerprint*/",
+                    "find": "MD5: ([a-fA-F0-9]{32})"
                 }
             }
-        }
+        },
+        "extract_dir": "$matchFullname"
     }
 }

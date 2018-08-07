@@ -1,11 +1,11 @@
 {
     "homepage": "https://adoptopenjdk.net",
-    "version": "8u181-b13-201808061800",
-    "license": "http://openjdk.java.net/legal/gplv2+ce.html",
+    "version": "8u181-b13_367",
+    "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AdoptOpenJDK/openjdk8-nightly/releases/download/jdk8u181-b13-201808061800/OpenJDK8_x64_Windows_201808061800.zip",
-            "hash": "24423860e94677e06094a2079bb349d7aa64cf423e213f401c82b6e30702248d"
+            "url": "https://ci.adoptopenjdk.net/job/openjdk8_build_x86-64_windows/367/artifact/OpenJDK8_x64_Windows_201808061800.zip",
+            "hash": "md5:e84b188544076a6f39f0c450427925ed"
         }
     },
     "extract_dir": "jdk8u181-b13",
@@ -14,20 +14,20 @@
         "JAVA_HOME": "$dir"
     },
     "checkver": {
-        "url": "https://github.com/AdoptOpenJDK/openjdk8-nightly/releases",
-        "re": "(?<fullname>jdk(?<major>[\\du]+)-(?<build>b[\\d]+)-(?<bdate>[\\d]{12}))/OpenJDK8_x64_Windows_",
-        "replace": "${major}-${build}-${bdate}"
+        "url": "https://ci.adoptopenjdk.net/job/openjdk8_build_x86-64_windows/lastSuccessfulBuild/consoleFull",
+        "re": "(?sm)<title>openjdk(?<jdk>[\\d]+)(?<jvm>_openj9)?_build_x86-64_windows #(?<jbuild>[\\d]+)(?:.*?)OpenJDK repo tag is (?<fullname>jdk(?<major>[\\du]+)-(?<build>b[\\d]+))(?:.*?)Moving the artifacts to /(?:.*?)/(?<filename>OpenJDK[\\d]+_x64_Windows_(?<bdate>[\\d]{12})).zip",
+        "replace": "${major}-${build}_${jbuild}"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/AdoptOpenJDK/openjdk8-nightly/releases/download/$matchFullname/OpenJDK8_x64_Windows_$matchBdate.zip",
+                "url": "https://ci.adoptopenjdk.net/job/openjdk$matchJdk$matchJvm_build_x86-64_windows/$matchJbuild/artifact/$matchFilename.zip",
                 "hash": {
-                    "url": "https://github.com/AdoptOpenJDK/openjdk8-nightly/releases/download/$matchFullname/OpenJDK8_x64_Windows_$matchBdate.sha256.txt",
-                    "find": "^([a-fA-F0-9]{64})"
+                    "url": "$url/*fingerprint*/",
+                    "find": "MD5: ([a-fA-F0-9]{32})"
                 }
             }
         },
-        "extract_dir": "jdk$matchMajor-$matchBuild"
+        "extract_dir": "$matchFullname"
     }
 }
