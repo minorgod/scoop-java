@@ -1,7 +1,7 @@
 {
     "homepage": "http://jdk.java.net/11",
     "version": "11-25",
-    "license": "http://openjdk.java.net/legal/gplv2+ce.html",
+    "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
             "url": "https://download.java.net/java/early_access/jdk11/25/GPL/openjdk-11-ea+25_windows-x64_bin.zip",
