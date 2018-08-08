@@ -1,11 +1,11 @@
 {
     "homepage": "https://adoptopenjdk.net",
-    "version": "10.0.2-13_212",
+    "version": "10.0.2-13_213",
     "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
-            "url": "https://ci.adoptopenjdk.net/job/openjdk10_build_x86-64_windows/212/artifact/OpenJDK10_x64_Windows_201808071552.zip",
-            "hash": "md5:05f07a465938ddc39cd9d3ce4aaee7cb"
+            "url": "https://ci.adoptopenjdk.net/job/openjdk10_build_x86-64_windows/213/artifact/OpenJDK10_x64_Windows_201808081552.zip",
+            "hash": "md5:bbe1e301a19e20d4a38843b50f5e2365"
         }
     },
     "extract_dir": "jdk-10.0.2+13",
