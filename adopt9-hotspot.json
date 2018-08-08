@@ -1,11 +1,11 @@
 {
     "homepage": "https://adoptopenjdk.net",
-    "version": "9.0.4-11_250",
+    "version": "9.0.4-11_251",
     "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
-            "url": "https://ci.adoptopenjdk.net/job/openjdk9_build_x86-64_windows/250/artifact/OpenJDK9_x64_Windows_201808071426.zip",
-            "hash": "3cecb9e8ac31a2b212246d205dbc65971f25f29d0dbc08740395c236a452782a"
+            "url": "https://ci.adoptopenjdk.net/job/openjdk9_build_x86-64_windows/251/artifact/OpenJDK9_x64_Windows_201808081426.zip",
+            "hash": "f8a38d499a7547e7076af2536cd2d1a71e85af8bde654fc6f7a55d429f77d657"
         }
     },
     "extract_dir": "jdk-9.0.4+11",
