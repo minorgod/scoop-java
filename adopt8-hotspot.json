@@ -1,11 +1,11 @@
 {
     "homepage": "https://adoptopenjdk.net",
-    "version": "8u181-b13_368",
+    "version": "8u181-b13_369",
     "license": "GPL-2.0-with-classpath-exception",
     "architecture": {
         "64bit": {
-            "url": "https://ci.adoptopenjdk.net/job/openjdk8_build_x86-64_windows/368/artifact/OpenJDK8_x64_Windows_201808071800.zip",
-            "hash": "md5:8bc5e30748906239402ec3e95013b7a5"
+            "url": "https://ci.adoptopenjdk.net/job/openjdk8_build_x86-64_windows/369/artifact/OpenJDK8_x64_Windows_201808081800.zip",
+            "hash": "md5:3691838578c14ecd567808506a73ff3c"
         }
     },
     "extract_dir": "jdk8u181-b13",
